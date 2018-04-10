@@ -316,8 +316,8 @@ changelog:
 			sram = <0 0>;
 		};
 		
-		// phuclm - this i2s used for zl38063 codec
-        i2s_0:i2s@c0055000 {
+		// phuclm - this i2s1 used for zl38063 codec
+        i2s_1:i2s@c0056000 {
             #sound-dai-cells = <0>;
             status = "okay";
             trans-mode = <0>;
@@ -329,8 +329,8 @@ changelog:
             sample-rate = <48000>; // maybe 16000
         };
         
-        // phuclm = this i2s used for tas5720
-        i2s_1:i2s@c0056000 {
+        // phuclm = this i2s0 used for tas5720
+        i2s_0:i2s@c0055000 {
             #sound-dai-cells = <0>;
             status = "okay";
             mclk-in = <0>;
@@ -380,7 +380,7 @@ changelog:
         simple-audio-card,dai-link@0 {
             format = "i2s";
             cpu {
-                sound-dai = <&i2s_1 0>;
+                sound-dai = <&i2s_0 0>;
             };
             codec {
                 sound-dai = <&tas5720>;
@@ -391,7 +391,7 @@ changelog:
         simple-audio-card,dai-link@1 {
             format = "i2s";
             cpu {
-                sound-dai = <&i2s_0 0>;
+                sound-dai = <&i2s_1 0>;
             };
             codec {
                 frame-master;
@@ -400,14 +400,6 @@ changelog:
             };
         };
     };
-    
-    /*
-    sound {
-        compatible = "microsemi,microsemi-dac";
-        i2s-controller = <&i2s_1>;
-        status = "okay";
-    };
-    */
     
     spdif_out: spdif-out {
         #sound-dai-cells = <0>;
