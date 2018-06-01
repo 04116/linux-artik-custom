@@ -62,9 +62,9 @@ static struct snd_soc_dai_link snd_microsemi_dac_dai[] = {
     {
     .name           = "Microsemi DAC",
     .stream_name    = "Microsemi DAC ",
-    .cpu_dai_name   = "c0056000.i2s",
+    .cpu_dai_name   = "c0055000.i2s",
     .codec_dai_name = "zl380xx-dai",
-    .platform_name  = "c0056000.i2s",
+    .platform_name  = "c0055000.i2s",
     .codec_name     = "zl380-codec",
     .dai_fmt        = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
                         SND_SOC_DAIFMT_CBM_CFM,
